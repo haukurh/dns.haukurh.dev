@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A small web app to make DNS queries online"
+    />
+    <meta name="keywords" content="dns, dig, doh, dns over https" />
+    <title>DNS query</title>
+    <link rel="preload" href="/js/main.js" as="script" />
+    <link
+      href="/main.css"
+      media="all"
+      rel="stylesheet"
+      as="style"
+      type="text/css"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>DNS query</h1>
+    </header>
+
+    <main>
+      <form id="query">
+        <select name="provider">
+          <option value="cloudflare">CloudFlare DNS (1.1.1.1)</option>
+          <option value="google">Google Public DNS (8.8.8.8)</option>
+        </select>
+        <input
+          type="text"
+          name="hostname"
+          required
+          placeholder="wikipedia.org"
+        />
+        <select name="type">
+          <option value="ANY">ANY</option>
+          <option value="A">A</option>
+          <option value="AAAA">AAAA</option>
+          <option value="TXT">TXT</option>
+          <option value="MX">MX</option>
+          <option value="SOA">SOA</option>
+          <option value="CAA">CA</option>
+        </select>
+      </form>
+    </main>
+
+    <footer></footer>
+
+    <script src="/js/main.js" type="application/javascript"></script>
+  </body>
+</html>
