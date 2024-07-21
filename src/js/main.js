@@ -1,6 +1,7 @@
 const PROVIDERS = {
   cloudflare: 'https://1.1.1.1/dns-query',
   google: 'https://8.8.8.8/resolve',
+  quad9: 'https://9.9.9.9:5053/dns-query',
 };
 
 const TYPES = ['ANY', 'A', 'AAAA', 'CNAME', 'TXT', 'MX', 'SRV', 'SOA', 'CAA'];
