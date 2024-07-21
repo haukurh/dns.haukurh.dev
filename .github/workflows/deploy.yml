@@ -42,3 +42,4 @@ jobs:
 
       - name: Run CloudFront invalidation
         run: aws cloudfront create-invalidation --distribution-id ${{ vars.AWS_CLOUDFRONT_DIST }} --paths "/*"
+
