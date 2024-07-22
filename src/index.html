@@ -11,7 +11,7 @@
     <title>DNS query</title>
     <link rel="preload" href="/js/main.js" as="script" />
     <link
-      href="/main.css"
+      href="/css/main.css"
       media="all"
       rel="stylesheet"
       as="style"
@@ -24,32 +24,49 @@
     </header>
 
     <main>
-      <form id="query">
-        <select name="provider">
-          <option value="cloudflare">CloudFlare DNS (1.1.1.1)</option>
-          <option value="google">Google Public DNS (8.8.8.8)</option>
-          <option value="quad9" selected>Quad9 DNS (9.9.9.9)</option>
-        </select>
-        <input
-          type="text"
-          name="hostname"
-          required
-          placeholder="wikipedia.org"
-        />
-        <select name="type">
-          <option value="ANY">ANY</option>
-          <option value="A">A</option>
-          <option value="AAAA">AAAA</option>
-          <option value="TXT">TXT</option>
-          <option value="MX">MX</option>
-          <option value="SOA">SOA</option>
-          <option value="CAA">CA</option>
-        </select>
+      <form id="query" method="get" action="?">
+        <p>
+          <label for="provider">DNS provider</label>
+          <select name="provider" id="provider">
+            <option value="cloudflare">CloudFlare DNS (1.1.1.1)</option>
+            <option value="google">Google Public DNS (8.8.8.8)</option>
+            <option value="quad9" selected>Quad9 DNS (9.9.9.9)</option>
+          </select>
+        </p>
+        <p>
+          <label for="hostname">hostname: </label>
+          <input
+            type="text"
+            id="hostname"
+            name="hostname"
+            required
+            placeholder="wikipedia.org"
+          />
+          <label for="type">type: </label>
+          <select name="type" id="type">
+            <option value="ANY">ANY</option>
+            <option value="A">A</option>
+            <option value="AAAA">AAAA</option>
+            <option value="TXT">TXT</option>
+            <option value="MX">MX</option>
+            <option value="SOA">SOA</option>
+            <option value="CAA">CA</option>
+          </select>
+        </p>
+        <p>
+          <button type="submit">lookup</button>
+        </p>
       </form>
       <pre id="answer"></pre>
     </main>
 
-    <footer></footer>
+    <footer>
+      <p>
+        Privacy statement: All request are made straight to the selected DNS
+        provider from your browser, which will reveal your IP address,
+        user-agent and possibly more identifiable information.
+      </p>
+    </footer>
 
     <script src="/js/main.js" type="application/javascript"></script>
   </body>
